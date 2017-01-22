@@ -23,7 +23,7 @@ install:
 
 script:
   # Run a simple test (I should still be in the right folder)
-  - ./test_compose.sh
+  - ./test_compose.py
 
 git:
   depth: 3
