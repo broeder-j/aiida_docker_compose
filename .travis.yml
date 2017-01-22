@@ -8,21 +8,22 @@ services:
 env:
   - DOCKER_COMPOSE_VERSION=1.10.0 COMPOSE_FOLDER=test_aiida_qepw
 
-install:
+before_install:
   # Update docker-compose
   - sudo rm /usr/local/bin/docker-compose
   - curl -L https://github.com/docker/compose/releases/download/${DOCKER_COMPOSE_VERSION}/docker-compose-`uname -s`-`uname -m` > docker-compose
   - chmod +x docker-compose
   - sudo mv docker-compose /usr/local/bin
 
-before_install:
+install:
   #  Start all services, setup aiida, start daemon, setup/configure computer,
   #  setup also code.
   - cd "${COMPOSE_FOLDER}"
   - ./startup_firsttime.sh 
 
 script:
-  # Run a simple test.
+  # Run a simple test (in the right folder)
+  - cd "${COMPOSE_FOLDER}"
   - ./test_compose.sh
 
 git:
