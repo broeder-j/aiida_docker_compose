@@ -18,11 +18,12 @@ install:
 before_install:
   #  Start all services, setup aiida, start daemon, setup/configure computer,
   #  setup also code.
-  - ./${COMPOSE_FOLDER}/startup_firsttime.sh
+  - cd "${COMPOSE_FOLDER}"
+  - ./startup_firsttime.sh 
 
 script:
   # Run a simple test.
-  - ./${COMPOSE_FOLDER}/test_compose.sh
+  - ./test_compose.sh
 
 git:
   depth: 3
