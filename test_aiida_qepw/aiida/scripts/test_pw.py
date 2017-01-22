@@ -15,7 +15,7 @@ codename = 'pw@torquessh'
 timeout_secs = 5*60 
 queue = None
 
-expected_enegy = -3700.91106342615
+expected_energy = -3700.91106342615
 
 ################################################################
 
@@ -133,7 +133,7 @@ while time.time() - start_time < timeout_secs:
     try:
         print subprocess.check_output(
             ["verdi", "calculation", "list"], 
-            shell=True, stderr=subprocess.STDOUT,
+            stderr=subprocess.STDOUT,
         )
     except subprocess.CalledProcessError as e:
         print "Note: the command failed, message: {}".format(e.message)
@@ -148,7 +148,7 @@ if exited_with_timeout:
         timeout_secs)
     sys.exit(2)
 else:
-    if abs(calc.res.energy - expected_energy) < 1.e-3):
+    if abs(calc.res.energy - expected_energy) < 1.e-3:
         print "OK, energy has the expected value"
         sys.exit(0)
     else:
