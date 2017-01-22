@@ -76,5 +76,15 @@ else
     # Automatically by verdi setup
     verdi profile setdefault verdi default
     verdi profile setdefault daemon default
+
+    # Start the daemon now
+    verdi daemon start
+
+    # Setup the computer 'torquessh'
+    cat ~/.dockerscripts/computer-setup-input.txt | verdi computer setup
+
+    # Configure it
+    cat ~/.dockerscripts/computer-configure-input.txt | verdi computer configure torquessh
+
 fi
 

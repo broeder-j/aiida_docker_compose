@@ -10,7 +10,11 @@ RUN mkdir /home/aiida/.dockerscripts
 ## Prepare startup scripts
 COPY ./scripts/wait-for-it.sh /home/aiida/.dockerscripts/wait-for-it.sh
 COPY ./scripts/aiida_setup.sh /home/aiida/.dockerscripts/aiida_setup.sh
-COPY ./scripts/aiida_setup_init_script.sh /etc/my_init.d/ZZ_aiida_setup_init_script.sh
+COPY ./scripts/computer-setup-input.txt /home/aiida/.dockerscripts/computer-setup-input.txt
+COPY ./scripts/computer-configure-input.txt /home/aiida/.dockerscripts/computer-configure-input.txt
+COPY ./scripts/code-setup-input.txt /home/aiida/.dockerscripts/code-setup-input.txt
+COPY ./scripts/test_pw.py /home/aiida/.dockerscripts/test_pw.py
+COPY ./scripts/data/ /home/aiida/.dockerscripts/data/
 
 # Prepare the folder, the next command will assign it to the correct
 # user, so it works when I mount an external named volume
@@ -20,7 +24,7 @@ RUN mkdir ~/.aiida/ && mkdir ~/.ssh/keys
 USER root
 RUN chown -R aiida:aiida /home/aiida/.dockerscripts && \
     chown -R aiida:aiida /home/aiida/.aiida && \
-    chown -R aiida:aiida /home/aiida/.ssh && \
+    chown -R aiida:aiida /home/aiida/.ssh 
 
 # TO CHECK: also because we need to start the web service and install Apache
 # expose https port (for rest? or maybe instead expose jupyter?)
