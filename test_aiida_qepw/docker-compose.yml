@@ -14,7 +14,7 @@ services:
      volumes:
        - dbdata:/var/lib/postgres/data
      env_file:
-       - init/env/postgres.env
+       - compose-init/env/postgres.env
 
   # torquessh-quantumespresso is an example of 
   # how you can extend the base image
@@ -22,17 +22,17 @@ services:
      build: torquessh-quantumespresso/
      privileged: true
      env_file:
-       - init/env/torque.env
+       - compose-init/env/torque.env
 
   aiida:
      build: aiida/
      volumes:
         - aiidalogs:/home/aiida/.aiida/
         - aiidarepo:/home/aiida/.aiida-repo/
-        - ./init/sshkeys/sharedfolder:/home/aiida/.ssh/keys:ro
+        - ./compose-init/sshkeys/sharedfolder:/home/aiida/.ssh/keys:ro
      depends_on:
         - db
      env_file:
-        - init/env/aiida.env
+        - compose-init/env/aiida.env
 
 

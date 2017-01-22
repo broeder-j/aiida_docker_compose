@@ -7,17 +7,12 @@ MAINTAINER AiiDA Team <info@aiida.net>
 # belong to root and therefore you have permission problems)
 RUN mkdir /home/aiida/.dockerscripts
 
-## Prepare startup scripts
-COPY ./scripts/wait-for-it.sh /home/aiida/.dockerscripts/wait-for-it.sh
-COPY ./scripts/aiida_setup.sh /home/aiida/.dockerscripts/aiida_setup.sh
-COPY ./scripts/computer-setup-input.txt /home/aiida/.dockerscripts/computer-setup-input.txt
-COPY ./scripts/computer-configure-input.txt /home/aiida/.dockerscripts/computer-configure-input.txt
-COPY ./scripts/code-setup-input.txt /home/aiida/.dockerscripts/code-setup-input.txt
-COPY ./scripts/test_pw.py /home/aiida/.dockerscripts/test_pw.py
-COPY ./scripts/data/ /home/aiida/.dockerscripts/data/
+## Copy startup scripts, will be used later
+COPY ./scripts/ /home/aiida/.dockerscripts/
 
-# Prepare the folder, the next command will assign it to the correct
-# user, so it works when I mount an external named volume
+# Prepare the folders - the next command will assign it to the correct
+# user, so it works with proper permissions when I mount 
+# an external named volume
 RUN mkdir ~/.aiida/ && mkdir ~/.ssh/keys
 
 # Make  sure all things created have the right permissions

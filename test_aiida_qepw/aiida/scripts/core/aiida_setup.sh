@@ -14,7 +14,7 @@ then
 fi
 
 # Wait for ssh on torquessh
-~/.dockerscripts/wait-for-it.sh torquessh:22 -t 0
+~/.dockerscripts/core/wait-for-it.sh torquessh:22 -t 0
 
 # Store the host in known_hosts, if not already there
 ssh-keygen -F torquessh > /dev/null 2>&1 || ssh-keyscan torquessh >> ~/.ssh/known_hosts
@@ -25,7 +25,7 @@ if [ "$AIIDA_DBPORT" == "" ]
 then
     AIIDA_PORT=5432
 fi
-~/.dockerscripts/wait-for-it.sh db:$AIIDA_PORT -t 0
+~/.dockerscripts/core/wait-for-it.sh db:$AIIDA_PORT -t 0
 
 echo "which verdi"
 which verdi
@@ -81,10 +81,10 @@ else
     verdi daemon start
 
     # Setup the computer 'torquessh'
-    cat ~/.dockerscripts/computer-setup-input.txt | verdi computer setup
+    cat ~/.dockerscripts/core/computer-setup-input.txt | verdi computer setup
 
     # Configure it
-    cat ~/.dockerscripts/computer-configure-input.txt | verdi computer configure torquessh
+    cat ~/.dockerscripts/core/computer-configure-input.txt | verdi computer configure torquessh
 
 fi
 
