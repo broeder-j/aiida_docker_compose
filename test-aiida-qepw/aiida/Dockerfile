@@ -1,6 +1,6 @@
-# TODO: replace this with the docker image on the account aiidateam
-FROM giovannipizzi/aiida_core-base
+#TODO: specify a specific version here
 
+FROM aiidateam/aiida_core_base
 MAINTAINER AiiDA Team <info@aiida.net>
 
 # Make directory (if COPY in the line below creates it automatically, it then will

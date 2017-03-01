@@ -47,13 +47,4 @@ Use `docker-compose down`. Note that this will keep the data.
 If you want to kill also the data (i.e. the named data volumes), use
 `docker-compose down -v`
 
-# Todo
-
-In the short term:
-
-  - move pulled images from 'giovannipizzi' docker hub account to 'aiidateam'
-
-In the mid term:
-
-  - start the AiiDA REST, and use it to control AiiDA from the outside? or jupyter?
 

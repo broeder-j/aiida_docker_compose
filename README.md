@@ -1,7 +1,6 @@
 # aiida_docker_compose
 
-This repository contains 
-Some examples of docker-compose configurations to
+This repository contains some examples of docker-compose configurations to
 
 - create Docker images specific to a given code and plugin
 
@@ -19,4 +18,7 @@ that builds a full system with quantum espresso, runs a simple test
 with pw.x, and performs a basic check to verify if the result is the
 expected one.
 
+# Repository location
+
+https://github.com/aiidateam/aiida_docker_compose
 

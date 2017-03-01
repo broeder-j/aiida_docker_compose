@@ -72,11 +72,6 @@ else
 	--first-name=AiiDA --last-name="In Docker" \
 	--institution="None" --no-password
 
-    # Workaround, currently the default profile is not set
-    # Automatically by verdi setup
-    verdi profile setdefault verdi default
-    verdi profile setdefault daemon default
-
     # Start the daemon now
     verdi daemon start
 

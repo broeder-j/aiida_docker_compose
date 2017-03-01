@@ -1,6 +1,4 @@
-# base image needs to be moved under the aiidateam account, and this
-# link needs to be updated
-FROM giovannipizzi/torquessh-base
+FROM aiidateam/torquessh-base:1.0
 MAINTAINER AiiDA Team <info@aiida.net>
 
 # Use baseimage-docker's init system.

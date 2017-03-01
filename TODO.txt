@@ -1,0 +1,3 @@
+- Set a specific tag for the aiida_core_base docker image
+- Update the scripts for verdi computer setup/configure and verdi code setup to run the scripts
+
