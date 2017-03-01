@@ -72,6 +72,10 @@ else
 	--first-name=AiiDA --last-name="In Docker" \
 	--institution="None" --no-password
 
+    # These will not be needed soon
+    verdi profile setdefault verdi default
+    verdi profile setdefault daemon default
+
     # Start the daemon now
     verdi daemon start
 
