@@ -7,7 +7,7 @@ services:
 
 env:
   - DOCKER_COMPOSE_VERSION=1.10.0 COMPOSE_FOLDER=test-aiida-qepw
-  - DOCKER_COMPOSE_VERSION=1.10.0 COMPOSE_FOLDER=test-aiida-simple
+  - DOCKER_COMPOSE_VERSION=1.10.0 COMPOSE_FOLDER=test-aiida-basic
 
 before_install:
   # Update docker-compose
