@@ -4,7 +4,7 @@
 set -e
 
 ## I can now setup the computer etc.
-docker-compose exec --user aiida aiida /bin/bash -l -c "verdi run /home/aiida/.dockerscripts/test_daemon.py"
+docker-compose exec --user aiida aiida /bin/bash -l -c "verdi run /home/aiida/.dockerscripts/plugin/test_plugin.py"
 
 
 
