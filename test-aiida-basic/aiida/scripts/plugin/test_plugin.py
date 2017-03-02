@@ -13,7 +13,7 @@ num_jobs = 30 # Num jobs to submit
 
 def have_finished(pks):
     finished_list = [load_node(pk).has_finished() for pk in pks]
-    num_finished = len(_ for _ in finished_list if _)
+    num_finished = len([_ for _ in finished_list if _])
     print "{}/{} finished".format(num_finished, len(finished_list))
     return not (False in finished_list)
 
@@ -53,10 +53,11 @@ for counter in range(1, num_jobs+1):
     calc.set_withmpi(False)
     
     calc.use_parameters(parameters)
+    calc.use_template(template)
     calc.store_all()
     print "[{}] created calculation {}, pk={}".format(
         counter, calc.uuid, calc.dbnode.pk)
-    values_to_check[pk] = inputval*2
+    values_to_check[calc.pk] = inputval*2
     calc.submit()
     print "[{}] calculation submitted.".format(counter)
 
