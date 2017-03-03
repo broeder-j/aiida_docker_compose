@@ -16,10 +16,10 @@ services:
      env_file:
        - compose-init/env/postgres.env
 
-  # torquessh-quantumespresso is an example of 
-  # how you can extend the base image
+  # torquessh-withplugin should extend torquessh_base
+  # with your simulations software
   torquessh:
-     build: torquessh-quantumespresso/
+     build: torquessh-withplugin/
      privileged: true
      env_file:
        - compose-init/env/torque.env
