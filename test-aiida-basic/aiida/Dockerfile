@@ -3,9 +3,6 @@
 FROM aiidateam/aiida_core_base
 MAINTAINER AiiDA Team <info@aiida.net>
 
-# Copy the correct version of the plugin
-COPY ./templatereplacer.py /home/aiida/.local/lib/python2.7/site-packages/aiida/orm/calculation/job/simpleplugins/templatereplacer.py
-
 # Make directory (if COPY in the line below creates it automatically, it then will
 # belong to root and therefore you have permission problems)
 RUN mkdir /home/aiida/.dockerscripts
