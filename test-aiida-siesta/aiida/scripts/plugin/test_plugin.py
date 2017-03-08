@@ -2,11 +2,15 @@
 # -*- coding: utf-8 -*-
 import sys
 import os
+import time
+import subprocess
 
 from aiida.common.example_helpers import test_and_get_code
 from aiida.common.exceptions import NotExistent
 
 expected_free_energy = -1015.377304
+timeout_secs = 5*60.
+queue = None
 
 ################################################################
 
