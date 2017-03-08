@@ -18,6 +18,9 @@ that builds a full system with quantum espresso, runs a simple test
 with pw.x, and performs a basic check to verify if the result is the
 expected one.
 
+Now also a basic test (just multiplying a number by two, with minimal
+dependencies) and a test for Siesta are present.
+
 # Repository location
 
 https://github.com/aiidateam/aiida_docker_compose
