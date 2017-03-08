@@ -30,7 +30,7 @@ USER aiida
 WORKDIR /home/aiida/code/
 RUN mkdir siesta && cd siesta && \
     git clone https://github.com/albgar/aiida_core.git && \
-    cd aiida_core/ &&
+    cd aiida_core/ && \
     git checkout siesta-0.7 && \
     cp -r aiida/orm/calculation/job/siesta/ ../../aiida_core/aiida/orm/calculation/job/siesta/ && \
     cp -r aiida/parsers/plugins/siesta/ ../../aiida_core/aiida/parsers/plugins/siesta/ && \
