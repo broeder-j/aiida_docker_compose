@@ -20,9 +20,9 @@ WORKDIR /home/app
 #
 # Compile Siesta
 #
-RUN curl -L \
-    https://github.com/siesta-project/siesta-aiida-4.0/archive/master.tar.gz \
-     | tar xzf - && \
+RUN curl -L -o master.tar.gz \
+    https://github.com/siesta-project/siesta-aiida-4.0/archive/master.tar.gz && \
+    tar xzf master.tar.gz && \
     cd siesta-aiida-4.0-master/Obj/ && \
     sh ../Src/configure FC=gfortran && \
     sh ../Src/obj_setup.sh && \
