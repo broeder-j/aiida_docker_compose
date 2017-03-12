@@ -19,6 +19,9 @@ WORKDIR /home/app
 
 #
 # Compile Siesta
+#   Get source from a GitHub mirror of the Launchpad sources
+#   This avoids havingg to install bz and dependencies in the image
+#   (temporary hack)
 #
 RUN curl -L -o master.tar.gz \
     https://github.com/siesta-project/siesta-aiida-4.0/archive/master.tar.gz && \
