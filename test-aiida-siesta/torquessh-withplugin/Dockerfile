@@ -20,7 +20,7 @@ WORKDIR /home/app
 #
 # Compile Siesta
 #   Get source from a GitHub mirror of the Launchpad sources
-#   This avoids havingg to install bz and dependencies in the image
+#   This avoids having to install bzr and dependencies in the image
 #   (temporary hack)
 #
 RUN curl -L -o master.tar.gz \
@@ -33,7 +33,7 @@ RUN curl -L -o master.tar.gz \
     mkdir /home/app/bin/ && \
     cp siesta /home/app/bin/siesta && \
     cd ../../ && \
-    rm -rf siesta-aiida-4.0-master
+    rm -rf siesta-aiida-4.0-master master.tar.gz
 
 # I need to go back to root
 USER root   
