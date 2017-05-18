@@ -33,8 +33,8 @@ WORKDIR /home/aiida/code/
 RUN git clone https://github.com/cp2k/aiida-cp2k.git && \
     cd ./aiida-cp2k && \
     git checkout v0.1 && \
-    cp -rv ./aiida_cp2k/calculations ./aiida_core/aiida/orm/calculation/job/cp2k && \
-    cp -rv ./aiida_cp2k/parsers      ./aiida_core/aiida/parsers/plugins/cp2k
+    cp -rv ./aiida_cp2k/calculations ../aiida_core/aiida/orm/calculation/job/cp2k && \
+    cp -rv ./aiida_cp2k/parsers      ../aiida_core/aiida/parsers/plugins/cp2k
 
 # Important to end as user root (to run the init script)
 USER root
