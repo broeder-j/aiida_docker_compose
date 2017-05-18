@@ -1,0 +1,8 @@
+cp2k
+cp2k from Ubuntu
+False
+cp2k
+torquessh
+/usr/bin/cp2k.popt
+
+
