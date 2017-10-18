@@ -1,0 +1,8 @@
+pw
+pw.x from Ubuntu (package quantum-espresso)
+False
+quantumespresso.pw
+torquessh
+/usr/bin/pw.x
+
+

@@ -1,0 +1,8 @@
+fleur
+fleur serial verison without external dependencies for linux
+False
+fleur.fleur
+torquessh
+/home/app/codes/fleur/fleur
+ulimit -s unlimited
+

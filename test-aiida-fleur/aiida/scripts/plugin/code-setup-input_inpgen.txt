@@ -1,0 +1,8 @@
+inpgen
+input generator for Fleur version without external dependencies
+False
+fleur.inpgen
+torquessh
+/home/app/codes/inpgen/inpgen
+
+
