@@ -65,18 +65,18 @@ wf_para = ParameterData(dict={'fleur_runmax' : 4,
 
 # now we submit the some  workflows
 print('running Fleur scf wc on Si')
-res_scf = run(fleur_scf_wc, wf_parameters=wf_para, structure=s,
-              calc_parameters=si_fast_parameters, inpgen=code, fleur=code2)
+#res_scf = run(fleur_scf_wc, wf_parameters=wf_para, structure=s,
+#              calc_parameters=si_fast_parameters, inpgen=code, fleur=code2)
 
 # dos& band
 
-fleurinp = res_scf.get('fleurinp')
-fleur_calc = load_node(res_scf.get('output_scf_wf_para').get_dict().get('last_calc_uuid'))
-remote = fleur_calc.out.remote_folder
+#fleurinp = res_scf.get('fleurinp')
+#fleur_calc = load_node(res_scf.get('output_scf_wf_para').get_dict().get('last_calc_uuid'))
+#remote = fleur_calc.out.remote_folder
 
-print('submitting Fleur bandstructure and dos wc using defaults on results of run scf on Si')
-res_dos = submit(fleur_dos_wc, fleurinp=fleurinp, remote=remote, fleur=code2)
-res_band = submit(fleur_band_wc, fleurinp=fleurinp, remote=remote, fleur=code2)
+#print('submitting Fleur bandstructure and dos wc using defaults on results of run scf on Si')
+#res_dos = submit(fleur_dos_wc, fleurinp=fleurinp, remote=remote, fleur=code2)
+#res_band = submit(fleur_band_wc, fleurinp=fleurinp, remote=remote, fleur=code2)
 
 print('submmiting futher scf workchains on Si with different specified parameters, 2 should fail')
 # Using defaults
