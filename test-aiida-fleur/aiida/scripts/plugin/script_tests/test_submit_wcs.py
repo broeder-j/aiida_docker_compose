@@ -6,7 +6,7 @@ from aiida import load_dbenv, is_dbenv_loaded
 if not is_dbenv_loaded():
     load_dbenv()
 from aiida.orm import Code, DataFactory#, load_node
-from aiida.work.run import submit, run
+from aiida.work.run import submit
 from aiida_fleur.tools.StructureData_util import rel_to_abs
 from aiida_fleur.workflows.scf import fleur_scf_wc
 from aiida_fleur.workflows.band import fleur_band_wc
@@ -14,12 +14,12 @@ from aiida_fleur.workflows.dos import fleur_dos_wc
 
 StructureData = DataFactory('structure')
 ParameterData = DataFactory('parameter')
-#FleurinpData = DataFactory('fleurinp')
+FleurinpData = DataFactory('fleurinp')
 
 ###############################
 # Set your values here
-codename = 'inpgen@torquessh'
-codename2 = 'fleur@torquessh'
+codename = 'inpgen@pseudocluster'
+codename2 = 'fleur@pseudocluster'
 ###############################
 
 code = Code.get_from_string(codename)
